@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="UTKRISHTH">
+    <meta name="theme-color" content="#f9cf9f">
+    <link rel="icon" href="assets/logo.png">
+
+    <title>UTKRISHTHPAGE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,900;1,500;1,900&family=Dosis:wght@300;400;500;800&display=swap" rel="stylesheet">
+
+	<style>
+	:root {
+		--rounder: 0, 0, 0;
+		--maroon: 239, 0, 0;
+		--gold: 194, 139, 36;
+        --dark: 13, 13, 13;
+        --beige: 249, 207, 159;
+        --white: 255, 255, 255;
+	}
+	body {
+		font-family: 'Dosis', sans-serif;
+		color: rgb(var(--rounder));
+		background-color: rgb(var(--beige));
+        background-image: linear-gradient(rgba(249, 207, 159, 0.8), rgba(249, 207, 159, 0.8)),url(assets/topotrans.png);
+        background-size: 100%;
+        scrollbar-color: rgb(var(--gold)) rgb(var(--dark));
+	}
+	.textbox h1, h2, h3, h4 {
+		font-family: 'Barlow', sans-serif;
+        font-weight:500;
+	}
+	a {
+		color: rgb(var(--rounder));
+	}
+	a:hover {
+		color: rgb(var(--white));
+	}
+
+    .title {
+        font-size: 15rem;
+        font-family: 'Barlow', sans-serif;
+        font-weight:800;
+        position: relative;
+        top: -5rem;
+        left: -1rem;
+		text-decoration: underline;
+    }
+
+	b {
+		color: rgb(0,0,0);
+	}
+
+	.textbox {
+		box-shadow: 0px 0px 20px rgba(0,0,0,.60);
+		display: block;
+		max-width: 70%;
+		padding: 1rem;
+		background: #09060691;
+		margin: auto;
+		margin-top: -5rem;
+		border-radius: 3px;
+		font-size: 125%;
+	}
+	hr {
+		border-color: #000000;
+	}
+    @keyframes spinny {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+
+    .cert-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .cert-box {
+        border: 2px solid rgb(var(--dark));
+        border-radius: 8px;
+        padding: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .cert-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 8px 25px rgba(0,0,0,0.4);
+    }
+
+    .cert-box h3 {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 800;
+        font-size: 1.8rem;
+        color: rgb(var(--dark));
+        margin: 0;
+        letter-spacing: 2px;
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        backdrop-filter: blur(5px);
+    }
+
+    .modal-content {
+        background-color: #f9cf9f;
+        background-image: linear-gradient(rgba(249, 207, 159, 0.85), rgba(249, 207, 159, 0.85)), url(assets/topotrans.png);
+        background-size: 100%;
+        margin: 2% auto;
+        padding: 2rem;
+        border-radius: 10px;
+        width: 90%;
+        max-width: 1000px;
+        max-height: 85vh;
+        overflow-y: auto;
+        position: relative;
+        box-shadow: 0px 0px 30px rgba(0,0,0,0.7);
+    }
+
+    .close {
+        color: rgb(var(--dark));
+        float: right;
+        font-size: 2rem;
+        font-weight: bold;
+        cursor: pointer;
+        line-height: 1;
+    }
+
+    .close:hover {
+        color: rgb(var(--gold));
+    }
+
+    .modal h2 {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 800;
+        color: rgb(var(--dark));
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        text-decoration: underline;
+    }
+
+    .cert-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+    }
+
+    .cert-item {
+        background: rgba(13, 13, 13, 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+    }
+
+    .cert-item:hover {
+        transform: scale(1.05);
+    }
+
+    .cert-item img {
+        width: 100%;
+        max-width: 250px;
+        height: auto;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .cert-item h4 {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        color: rgb(var(--dark));
+        margin: 0.5rem 0;
+    }
+
+    .cert-item p {
+        color: rgb(var(--dark));
+        font-size: 0.9rem;
+        margin: 0;
+    }
+
+    .UTA img {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        border-radius: 5px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .UTA h4 {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 500;
+        color: rgb(var(--dark));
+        margin: 0.5rem 0;
+    }
+
+    .UTA p {
+        color: rgb(var(--dark));
+        font-size: 1.25rem;
+        margin: 0;
+    }
+
+    .UTA {
+        background: rgba(13, 13, 13, 0.1);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+        transition: transform 0.3s ease;
+    }
+
+
+    @media (max-width: 768px) {
+        .cert-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .modal-content {
+            width: 95%;
+            margin: 5% auto;
+            padding: 1rem;
+        }
+    }
+	</style>
+  </head>
+
+  <body>
+    <div class="title">
+        <a href="index.html">UTKRISHTH</a>
+    </div>
+	<div class="textbox">
+		<img loading="lazy" src="assets/floater.png" style="max-width: 300px; float: right; border-radius: 0.5rem;" data-tilt>
+		<h1>'UTKRISHTH'</h1>
+		<b>AGE:</b> <span id="age"></span>
+		<br>
+		<b>OCCUPATION:</b> Programmer, Graphic Designer, Cook, Cat.
+		<br>
+		<b>AREAS OF ACTIVITY:</b> Rarely, on the OSDEV community, or more commonly, the <a href="https://hackclub.com/">Hack Club</a> slack.
+		<hr>
+		Hi! I'm Utkrishth, an amatuer programmer and graphic designer. I'm <span id="age2"></span>, and I've been programming for about 6 years now, yes, 6 years.
+		<br><br>
+		I have a particular weakness for hard science fiction, space horror, analog horror, SCP and such. As you might've guessed, I make websites and stuff. I also make small stupid projects sometimes <a href="other.html">(here)</a>, and I'm trying to learn more, expand my skillset.
+		<br><br>
+		I can program in Python, React (React/React Native), C and a few others. Thank you for visiting and being interested in my work. It means a lot. If you want to get into contact with me for making websites or software or just to chat, you can mail me at <a href="mailto:utkrishth@utkrishth.in">utkrishth@utkrishth.in</a>.
+		<hr>
+		<h2>Certifications</h2>
+		Certifications don't really matter in terms of knowledge and these ones aren't anything big or special, however, some of you may be interested in these, as I have recieved certifications and badges from Microsoft, IBM, Grasshopper (Google), EC-Council, Hackerrank and the University of Texas at Arlington. 
+		<br><br>
+		I also currently hold the world record for being the youngest to obtain 100 international IT certifications and badges.
+        <br><br>
+        (CLICK THE BOXES TO SEE THE CERTIFICATES AND BADGES)
+		<hr>
+
+		<div class="cert-container">
+			<div class="cert-box" onclick="openModal('microsoft')">
+				<h3 class="center">MICROSOFT</h3>
+			</div>
+			<div class="cert-box" onclick="openModal('ibm')">
+				<h3>IBM</h3>
+			</div>
+			<div class="cert-box" onclick="openModal('google')">
+				<h3>GRASSHOPPER (GOOGLE)</h3>
+			</div>
+			<div class="cert-box" onclick="openModal('ec-council')">
+				<h3>EC-COUNCIL</h3>
+			</div>
+            <div class="cert-box" onclick="openModal('UTA')">
+				<h3>UNIVERSITY OF TEXAS</h3>
+			</div>
+            <div class="cert-box" onclick="openModal('hackerrank')">
+				<h3>HACKERRANK</h3>
+			</div>
+		</div>
+
+    <div id="microsoftModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('microsoft')">&times;</span>
+            <h2>MICROSOFT CERTIFICATIONS</h2>
+            <div class="cert-gallery">
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/MTAcert-1.png" alt="Microsoft Technical Associate">
+                    <h4>Introduction to Programming using Python</h4>
+                    <p>Microsoft Technical Associate: Introduction to Programming using Python</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/MOSExcel-1.png" alt="Microsoft Office Specialist">
+                    <h4>Office Excel 2016</h4>
+                    <p>Microsoft Office Specialist: Office Excel 2016</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/MOSWord-1.png" alt="Microsoft Office Specialist">
+                    <h4>Office Word 2016</h4>
+                    <p>Microsoft Office Specialist: Office Word 2016</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/MOSPowerpoint-1.png" alt="Microsoft Office Specialist">
+                    <h4>Office PowerPoint 2016</h4>
+                    <p>Microsoft Office Specialist: Office PowerPoint 2016</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ibmModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ibm')">&times;</span>
+            <h2>IBM CERTIFICATIONS AND BADGES</h2>
+            <div class="cert-gallery">
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/Badges_v8-07_Practitioner.png" alt="Enterprise Design Thinking Practitioner" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>Enterprise Design Thinking Practitioner</h4>
+                    <p>IBM Practitioner</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/DNC_Explorer_-_Energy___Utilities_Intro.png" alt="IBM Digital Catalyst: Energy & Utilities Industry Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Energy & Utilities Industry Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_-_Bank_-_Finance_Mkt_Indus_Intro.png" alt="IBM Digital Catalyst: Banking & Financial Markets Industry Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Banking & Financial Markets Industry Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_-_Build_your_first_IOT_app_v2.png" alt="IBM Digital Catalyst: Build Your First IOT Application V2 - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Build Your First IOT Application V2 - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_-_Deploy_a_Microservices_Based_App_v2.png" alt="IBM Digital Catalyst: Deploy a Microservices Based APP - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Deploy a Microservices Based APP - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_-_Hybrid_Cloud_Intro_-_Explorer.png" alt="IBM Digital Catalyst: Hybrid Cloud Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Hybrid Cloud Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_-_Monitor_App_Availability_V2.png" alt="IBM Digital Catalyst: Monitor Your App Availability V2 - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Monitor Your App Availability V2 - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_-_Travel___Transportation_Industry_Intro_-_Explorer.png" alt="IBM Digital Catalyst: Travel & Transportation Industry Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Travel & Transportation Industry Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_ADD_AUTH_TO_WEB_APPS_-_Innovator.png" alt="IBM Digital Catalyst: Add Authentication to Web Apps - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Add Authentication to Web Apps - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Agile_Intro_Innovator.png" alt="IBM Digital Catalyst: Agile Intro - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Agile Intro - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Analyze_and_Predict_Heart_Failure_-_Innovator.png" alt="IBM Digital Catalyst: Analyze and Predict Heart Failure - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Analyze and Predict Heart Failure - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Build_-_Deploy_App_Container_-_Innovator.png" alt="IBM Digital Catalyst: Build & Deploy an Application Container - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Build & Deploy an Application Container - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Build_Auction_App_on_Blockchain_-_Innovator.png" alt="IBM Digital Catalyst: Build Auction Application on Blockchain - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Build Auction Application on Blockchain - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Build_Smart_Home_IoT_App_-_Innovator.png" alt="IBM Digital Catalyst: Build a Smart Home IoT Application - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Build a Smart Home IoT Application - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Build_Voting_App_on_Blockchain_-_Innovator.png" alt="IBM Digital Catalyst: Build Voting Application on Blockchain - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Build Voting Application on Blockchain - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Build_yourown_Chatbot-_Innovator_Award.png" alt="IBM Digital Catalyst: Build Your Own Chatbot - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Build Your Own Chatbot - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Classification_-_NEW_COLLAR.png" alt="IBM Digital Catalyst: Classification" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Classification</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Cluster_Analysis_-_NEW_COLLAR.png" alt="IBM Digital Catalyst: Cluster Analysis" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Cluster Analysis</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Coding_Intro_-_Explorer.png" alt="IBM Digital Catalyst: Coding Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Coding Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Communicating_Insights_-_NEW_COLLAR.png" alt="IBM Digital Catalyst: Communicating Insights" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Communicating Insights</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Cont_Deploy_Angular_Apps_-_Innovator.png" alt="IBM Digital Catalyst: Continuously Deploy Your Angular Application - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Continuously Deploy Your Angular Application - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Create_Back-End_App-_Innovator_Award.png" alt="IBM Digital Catalyst: Create Back-End of an Application - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Create Back-End of an Application - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Create_Front-end_App-_Innovator_Award.png" alt="IBM Digital Catalyst: Create Front-End of an Application - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Create Front-End of an Application - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Create_Microsvc_using_IBM_Cloud_-_Innovator_Award.png" alt="IBM Digital Catalyst: Create a Microservice Using IBM Cloud - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Create a Microservice Using IBM Cloud - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Create_Web_Page-_Innovator_Award.png" alt="IBM Digital Catalyst: Create Your Own Web Page - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Create Your Own Web Page - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Data_Science_Fundamentals.png" alt="IBM Digital Catalyst: Data Science Fundamentals" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Data Science Fundamentals</h4>
+                    <p>IBM Digital Nation</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_DATA_UNDERSTANDING_AND_PREP_-_NEW_COLLAR_V2.png" alt="IBM Digital Catalyst: Data Understanding and Preparation V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Data Understanding and Preparation V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Deploy_a_Sample_App_on_Hybrid_Cloud.png" alt="IBM Digital Catalyst: Deploy a Sample App on Hybrid Cloud - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Deploy a Sample App on Hybrid Cloud - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Deploy_Apps_Using_DevOps_-_Innovator.png" alt="IBM Digital Catalyst: Deploy Apps Using DevOps - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Deploy Apps Using DevOps - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Deploy_your_first_container_-_Innovator.png" alt="IBM Digital Catalyst: Deploy Your First Container - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Deploy Your First Container - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Develop_Push_Notify_App_-_Innovator_Award.png" alt="IBM Digital Catalyst: Develop a Push Notifications App - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Develop a Push Notifications App - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Devops_for_Hybrid_Cloud_Apps.png" alt="IBM Digital Catalyst: Devops for Hybrid Cloud Apps" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Devops for Hybrid Cloud Apps</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Discover_IBM_Watson_Services_-_Innovator_Award.png" alt="IBM Digital Catalyst: Discover IBM Watson Services - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Discover IBM Watson Services - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Edge_Computing_and_AI.png" alt="IBM Digital Catalyst: Edge Computing and AI" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Edge Computing and AI</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Education_Industry_Intro.png" alt="IBM Digital Catalyst: Education Industry Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Education Industry Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Emerging_Tech_-_Artifical_Intelligence.png" alt="IBM Digital Catalyst: Emerging Tech - Artificial Intelligence Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Emerging Tech - Artificial Intelligence Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Emerging_Tech_-_Blockchain.png" alt="IBM Digital Catalyst: Emerging Tech - Blockchain Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Emerging Tech - Blockchain Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Emerging_Tech_-_Cloud.png" alt="IBM Digital Catalyst: Emerging Tech - Cloud Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Emerging Tech - Cloud Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Emerging_Tech_-_Cybersecurity_Intro.png" alt="IBM Digital Catalyst: Emerging Tech - Cybersecurity Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Emerging Tech - Cybersecurity Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Emerging_Tech_-_Gov_Industry_Intro.png" alt="IBM Digital Catalyst: Emerging Tech - Government Industry Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Emerging Tech - Government Industry Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Emerging_Tech_-_Healthcare_Industry_Intro.png" alt="IBM Digital Catalyst: Emerging Tech - Healthcare Industry Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Emerging Tech - Healthcare Industry Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Emerging_Tech_-_Internet_of_Things.png" alt="IBM Digital Catalyst: Emerging Tech - Internet of Things Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Emerging Tech - Internet of Things Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Emerging_Tech_-_Oil_Gas_Ind_Intro.png" alt="IBM Digital Catalyst: Emerging Tech - Oil & Gas Industry Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Emerging Tech - Oil & Gas Industry Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Get_Started_with_IBM_Cloud_-_Innovator_Award_V2.png" alt="IBM Digital Catalyst: Getting Started with IBM Cloud V2 - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Getting Started with IBM Cloud V2 - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Git.png" alt="IBM Digital Catalyst: Git" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Git</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Host_your_own_Wordpress_Site_-_Innovator.png" alt="IBM Digital Catalyst: Host your own Wordpress Site - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Host your own Wordpress Site - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Hybrid_Cloud_Fundamentals.png" alt="IBM Digital Catalyst: Hybrid Cloud Fundamentals" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Hybrid Cloud Fundamentals</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Hyperledger_Fabric_Security.png" alt="IBM Digital Catalyst: Hyperledger Fabric Security" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Hyperledger Fabric Security</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Identify_Potential_Repeat_Customers_-_Innovator_Award.png" alt="IBM Digital Catalyst: Identify Potential Repeat Customers - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Identify Potential Repeat Customers - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Investigate_Cybersecurity_Attacks_-_Innovator.png" alt="IBM Digital Catalyst: Investigate Cybersecurity Attacks - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Investigate Cybersecurity Attacks - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_IoT_Analytics_V3.png" alt="IBM Digital Catalyst: IoT Analytics V3" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: IoT Analytics V3</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_IoT_Fundamentals_V2.png" alt="IBM Digital Catalyst: IoT Fundamentals V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: IoT Fundamentals V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Java.png" alt="IBM Digital Catalyst: Java" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Java</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Javascript.png" alt="IBM Digital Catalyst: Javascript" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Javascript</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Kubernetes_Architecture_Essentials.png" alt="IBM Digital Catalyst: Kubernetes Architecture Essentials" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Kubernetes Architecture Essentials</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Log_and_Monitor_Apps_on_Hybrid_Cloud.png" alt="IBM Digital Catalyst: Log and Monitor Apps on Hybrid Cloud" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Log and Monitor Apps on Hybrid Cloud</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Manage_and_Operate_Apps_on_Hybrid_Cloud.png" alt="IBM Digital Catalyst: Manage and Operate Apps on Hybrid Cloud" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Manage and Operate Apps on Hybrid Cloud</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_API.png" alt="IBM Digital Catalyst: API" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: API</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Artificial_Intel_V2.png" alt="IBM Digital Catalyst: Artificial Intelligence V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Artificial Intelligence V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Blockchain_Fund_v2.png" alt="IBM Digital Catalyst: Blockchain Fundamentals V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Blockchain Fundamentals V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Chatbot_V3.png" alt="IBM Digital Catalyst: Chatbot V3" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Chatbot V3</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Cloud_Applications.png" alt="IBM Digital Catalyst: Cloud Applications" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Cloud Applications</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Cloud_Comput_V2.png" alt="IBM Digital Catalyst: Cloud Computing V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Cloud Computing V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Cloud_DB_V2.png" alt="IBM Digital Catalyst: Cloud Databases V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Cloud Databases V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Cloud_Foundry_and_Code_Engine.png" alt="IBM Digital Catalyst: Cloud Foundry and Code Engine" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Cloud Foundry and Code Engine</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Containers_-_Kubernetes.png" alt="IBM Digital Catalyst: Containers and Kubernetes" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Containers and Kubernetes</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_DEVOPS_V3.png" alt="IBM Digital Catalyst: DevOps V3" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: DevOps V3</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Docker_Essentials.png" alt="IBM Digital Catalyst: Docker Essentials" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Docker Essentials</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Express_Web_Framework_V2.png" alt="IBM Digital Catalyst: Express Web Framework V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Express Web Framework V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_HTML-CSS.png" alt="IBM Digital Catalyst: HTML & CSS" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: HTML & CSS</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Hyperledger_fabric_Integration_V2.png" alt="IBM Digital Catalyst: Hyperledger Fabric Integration V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Hyperledger Fabric Integration V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Integration.png" alt="IBM Digital Catalyst: Integration" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Integration</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_IOT_Network_Protocols_V2.png" alt="IBM Digital Catalyst: IoT Network Protocols V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: IoT Network Protocols V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Kubernetes.png" alt="IBM Digital Catalyst: Kubernetes" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Kubernetes</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Machine_Learning_V2.png" alt="IBM Digital Catalyst: Machine Learning V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Machine Learning V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Watson_Machine_Learning_V2.1.png" alt="IBM Digital Catalyst: Watson Machine Learning V2.1" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Watson Machine Learning V2.1</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Watson_V3.png" alt="IBM Digital Catalyst: Watson V3" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Watson V3</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Web_Development.png" alt="IBM Digital Catalyst: Web Development" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Web Development</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Web_Security.png" alt="IBM Digital Catalyst: Web Security" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Web Security</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_New_Collar_-_Web_Services_V2.png" alt="IBM Digital Catalyst: Web Services V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Web Services V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Nodejs_V2.png" alt="IBM Digital Catalyst: Node.js V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Node.js V2</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Notification_Sys_for_IOT_Apps_v2.png" alt="IBM Digital Catalyst: Notification System for IoT Applications V2 - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Notification System for IoT Applications V2 - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Predict_Using_Watson_Studios_-_Innovator_Award.png" alt="IBM Digital Catalyst: Predict Using Watson Studios - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Predict Using Watson Studios - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Project_Management_Fundamentals.png" alt="IBM Digital Catalyst: Project Management Fundamentals" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Project Management Fundamentals</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Protect_Sensitive_Data_-_Innovator.png" alt="IBM Digital Catalyst: Protect Sensitive Data - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Protect Sensitive Data - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Python.png" alt="IBM Digital Catalyst: Python" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Python</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Quantum_Computing_Intro_-_Explorer_V2.png" alt="IBM Digital Catalyst: Quantum Computing Intro - Explorer Award V2" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Quantum Computing Intro - Explorer Award V2</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_React_and_ECMAScript.png" alt="IBM Digital Catalyst: React and ECMAScript" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: React and ECMAScript</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Regression_-_NEW_COLLAR.png" alt="IBM Digital Catalyst: Regression" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Regression</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Securing_Apps_on_Hybrid_Cloud.png" alt="IBM Digital Catalyst: Securing Apps on Hybrid Cloud" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Securing Apps on Hybrid Cloud</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_TM-E_Industry_Intro.png" alt="IBM Digital Catalyst: Telecommunications, Media, and Entertainment Industry Intro - Explorer Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Telecommunications, Media, and Entertainment Industry Intro - Explorer Award</h4>
+                    <p>Explorer Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Track_Donations_w-Blockchain_Blockchain_-_Innovator.png" alt="IBM Digital Catalyst: Track Donations with Blockchain - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Track Donations with Blockchain - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Valuable_Insights_with_Watson.png" alt="IBM Digital Catalyst: Valuable Insights with Watson" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Valuable Insights with Watson</h4>
+                    <p>New Collar</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDC_Watson_Ast_and_Telegram_v2.png" alt="IBM Digital Catalyst: Watson Assistant and Telegram V2 - Innovator Award" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Watson Assistant and Telegram V2 - Innovator Award</h4>
+                    <p>Innovator Award</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/IDCNew_Collar_-_Language_Processing_V3.png" alt="IBM Digital Catalyst: Language Processing V3" style="width: 100%; max-width: 150px; height: auto; border-radius: 5px; margin-bottom: 1rem;">
+                    <h4>IBM Digital Catalyst: Language Processing V3</h4>
+                    <p>New Collar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="googleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('google')">&times;</span>
+            <h2>GRASSHOPPER CERTIFICATIONS</h2>
+            <div class="cert-gallery">
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/GA2.png" alt="Animations II">
+                    <h4>Animations II</h4>
+                    <p>Grasshopper Certificate of Completion</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/GAM.png" alt="Array Methods">
+                    <h4>Array Methods</h4>
+                    <p>Grasshopper Certificate of Completion</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/GCE.png" alt="Using a Code Editor">
+                    <h4>Using a Code Editor</h4>
+                    <p>Grasshopper Certificate of Completion</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/GCF.png" alt="Coding Fundamentals II">
+                    <h4>Coding Fundamentals II</h4>
+                    <p>Grasshopper Certificate of Completion</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/GCF1.png" alt="Coding Fundamentals">
+                    <h4>Coding Fundamentals</h4>
+                    <p>Grasshopper Certificate of Completion</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="ec-councilModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('ec-council')">&times;</span>
+            <h2>EC-COUNCIL CERTIFICATIONS</h2>
+            <div class="cert-gallery">
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (10).png" alt="Beginners Cryptography Demystified">
+                    <h4>Beginners Cryptography Demystified</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (1).png" alt="Cybersecurity for Blockchain from Ground Up">
+                    <h4>Cybersecurity for Blockchain from Ground Up</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (2).png" alt="Web Hacker's Toolbox: Tools Used by Successful Hackers">
+                    <h4>Web Hacker's Toolbox: Tools Used by Successful Hackers</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (3).png" alt="Applied Data Loss Prevention">
+                    <h4>Applied Data Loss Prevention</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (4).png" alt="Deep Dive into Open Source Intelligence using a Windows Host">
+                    <h4>Deep Dive into Open Source Intelligence using a Windows Host</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (5).png" alt="Data Analysis with Python Masterclass - Part 1">
+                    <h4>Data Analysis with Python Masterclass - Part 1</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (6).png" alt="Automate Security into CI/CD Pipelines with Jenkins - Introduction to DevSecOps">
+                    <h4>Automate Security into CI/CD Pipelines with Jenkins - Introduction to DevSecOps</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (7).png" alt="Master Wireshark 3 in 5 Days">
+                    <h4>Master Wireshark 3 in 5 Days</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (8).png" alt="Cyber Deception Demystified">
+                    <h4>Cyber Deception Demystified</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (9).png" alt="Jq Command Tutorials for Bash Shell Scripting">
+                    <h4>Jq Command Tutorials for Bash Shell Scripting</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (11).png" alt="Shell Scripting with Z Shell">
+                    <h4>Shell Scripting with Z Shell</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (12).png" alt="Web Hacking Expert: Full-Stack Exploitation Mastery">
+                    <h4>Web Hacking Expert: Full-Stack Exploitation Mastery</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (13).png" alt="Securing Endpoints with Microsoft Defender">
+                    <h4>Securing Endpoints with Microsoft Defender</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (14).png" alt="The Absolute Beginners Guide to Cyber Security">
+                    <h4>The Absolute Beginners Guide to Cyber Security</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (15).png" alt="OpenBSD for Beginners">
+                    <h4>OpenBSD for Beginners</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (16).png" alt="DevSecOps: Implementing Security in DevOps Processes">
+                    <h4>DevSecOps: Implementing Security in DevOps Processes</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (17).png" alt="Getting Started with Open Source Intelligence using a Windows Host">
+                    <h4>Getting Started with Open Source Intelligence using a Windows Host</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (18).png" alt="Pentesting Fundamentals for Beginners">
+                    <h4>Pentesting Fundamentals for Beginners</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here (19).png" alt="Computer Networks Security from Scratch to Advanced">
+                    <h4>Computer Networks Security from Scratch to Advanced</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/image file name here.png" alt="The Complete Python Hacking Course: Beginner to Advanced">
+                    <h4>The Complete Python Hacking Course: Beginner to Advanced</h4>
+                    <p>EC-Council Certificate of Achievement</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="UTAModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('UTA')">&times;</span>
+            <h2>UNIVERSITY OF TEXAS AT ARLINGTON CERTIFICATION</h2>
+            <div class="cert-gallery">
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/UTAcert.jpeg" alt="Introduction to Python 3 Programming">
+                    <h4>University of Texas at Arlington: Introduction to Python 3 Programming</h4>
+                    <p>UTA Certificate of Completion</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="hackerrankModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('hackerrank')">&times;</span>
+            <h2>HACKERRANK CERTIFICATIONS</h2>
+            <div class="cert-gallery">
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/Software Engineer Intern.png" alt="Software Engineer Intern">
+                    <h4>Software Engineer Intern</h4>
+                    <p>Hackerrank Certificate of Accomplishment</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/Software Engineer.png" alt="Software Engineer">
+                    <h4>Software Engineer</h4>
+                    <p>Hackerrank Certificate of Accomplishment</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/Frontend React.png" alt="Front-End Developer (React)">
+                    <h4>Front-End Developer (React)</h4>
+                    <p>Hackerrank Certificate of Accomplishment</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/Problem Solving Intermediate.png" alt="Problem Solving Intermediate">
+                    <h4>Problem Solving Intermediate</h4>
+                    <p>Hackerrank Certificate of Accomplishment</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/problem solving basic.jpeg" alt="Problem Solving Basic">
+                    <h4>Problem Solving Basic</h4>
+                    <p>Hackerrank Certificate of Accomplishment</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/Java Basic.png" alt="Java Basic">
+                    <h4>Java Basic</h4>
+                    <p>Hackerrank Certificate of Accomplishment</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/Python Basic.jpeg" alt="Python Basic">
+                    <h4>Python Basic</h4>
+                    <p>Hackerrank Certificate of Accomplishment</p>
+                </div>
+                <div class="cert-item">
+                    <img loading="lazy" src="assets/CSS.png" alt="CSS Basic">
+                    <h4>CSS Basic</h4>
+                    <p>Hackerrank Certificate of Accomplishment</p>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+	<script>
+		var dateobj = new Date();
+        var year = dateobj.getFullYear();
+		let x = year - 2012;
+        document.getElementById("age").innerHTML = x-1;
+		document.getElementById("age2").innerHTML = x-1;
+
+        function openModal(company) {
+            document.getElementById(company + 'Modal').style.display = 'block';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(company) {
+            document.getElementById(company + 'Modal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restore scrolling
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === 'block') {
+                        modal.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+	</script>
+</body>

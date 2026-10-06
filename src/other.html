@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="UTKRISHTH">
+    <meta name="theme-color" content="#f9cf9f">
+    <link rel="icon" href="assets/logo.png">
+
+    <title>UTKRISHTHPAGE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,900;1,500;1,900&family=Dosis:wght@300;400;500;800&display=swap" rel="stylesheet">
+
+
+	<style>
+	:root {
+		--rounder: 0, 0, 0;
+		--maroon: 239, 0, 0;
+		--gold: 194, 139, 36;
+        --dark: 13, 13, 13;
+        --beige: 249, 207, 159;
+        --white: 255, 255, 255;
+	}
+	body {
+		color: rgb(var(--rounder));
+		background-color: rgb(var(--beige));
+        background-image: linear-gradient(rgba(249, 207, 159, 0.8), rgba(249, 207, 159, 0.8)),url(assets/topotrans.png);
+        background-size: 100%;
+        scrollbar-color: rgb(var(--gold)) rgb(var(--dark));
+	}
+	.textbox h1, h2, h3, h4 {
+		font-family: 'Barlow', sans-serif;
+        font-weight:500;
+	}
+	a {
+		color: rgb(var(--rounder));
+	}
+	a:hover {
+		color: rgb(var(--white));
+	}
+	p {
+		font-family: 'Barlow', sans-serif;
+		font-weight:300
+	}
+
+    .title {
+        font-size: 15rem;
+        font-family: 'Barlow', sans-serif;
+        font-weight:800;
+        position: relative;
+        top: -5rem;
+        left: -1rem;
+		text-decoration: underline;
+    }
+
+	.textbox {
+		box-shadow: 0px 0px 20px rgba(0,0,0,.60);
+		display: block;
+		max-width: 70%;
+		padding: 1rem;
+		background: #09060691;
+		margin: auto;
+		margin-top: -5rem;
+		border-radius: 3px;
+		font-size: 125%;
+	}
+	hr {
+		border-color: #000000;
+	}
+
+    @keyframes spinny {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+	</style>
+  </head>
+
+  <body>
+    <div class="title">
+        <a href="index.html">UTKRISHTH</a>
+    </div>
+	<div class="textbox">
+		<h1>ASSORTED PROJECTS</h1>
+		<p>This is a nice small list of other projects that I made! Most of these are just small, simple projects made for fun.</p>
+		<hr>
+
+		<img loading="lazy" src="assets/tails.png" style="max-width: 350px; float: right; margin:0.7rem; border-radius: 10px;" onclick="window.location.href='assets/tails.png'">
+		<h2>TAILS</h2>
+		<p>Tails is a desktop pet/assistant that you can have play around with, he can walk, talk, fly and sit! he's powered by google gemini (since it's free)</p>
+		<h2>SOURCE CODE</h2>
+		<p>Source Code for Tails is not available, nor is the executable due to internal reasons</p>
+
+		<hr style="clear: right;">
+		
+		<div style="float: right; text-align: center; margin:0.6rem;">
+    	<img loading="lazy" src="assets/scp-api.webp" style="max-width: 350px; border-radius: 10px;" onclick="window.location.href='assets/scp-api.webp'">
+    		<div style="font-family: 'Barlow', sans-serif; font-size: 0.8em; margin-top: 0.3rem;">SCP-API implemented in a discord bot.</div>
+		</div>
+		<h2>SCP-API</h2>
+		<p>This is an API that can fetch all information about all SCPS (ok maybe not the last few), but it's made in python, it first fetches data from the <a href="https://scp-wiki.wikidot.com/">SCP wikidot</a> and stores it in a github repo as json, then whenever it needs to be fetched, it fetches from the github repo, not the wikidot (inorder to prevent load). <br><br> You can use this with pip <code>`pip install scpfetch`</code>, <br>Documentation is available at <a href="https://github.com/kanata-05/SCP-API/blob/main/README.md">Github</a></p><br>
+		
+		<hr style="clear: right;">
+
+		<div style="float: right; text-align: center; margin:0.6rem;">
+    	<img loading="lazy" src="assets/pager.png" style="max-width: 350px; border-radius: 10px;" onclick="window.location.href='assets/pager.png'">
+    		<div style="font-family: 'Barlow', sans-serif; font-size: 0.8em; margin-top: 0.3rem;">Pager - a modern handheld communication device.</div>
+		</div>
+		<h2>PAGER</h2>
+		<p>pager is a modern handheld communication device, it uses LoRa as it's primary communication protocol. it is to be used as an alternative method of secure and private communication.<br>however this is not only for LoRa communication, it supports SIM/Cell communication as well (2G) and has many entertainment applications and more.</p><br>
+		<h2>SOURCE CODE</h2>
+		<p>There is no source code available for this project. However you can read the <a href="https://github.com/utkrstht/pager/blob/main/README.md">README</a> for more information.</p>
+
+		<hr style="clear: right;">
+
+		<h2>ENCODER</h2>
+		<p>Encoder is a tool to encode information into videos (Made for Midnight). <br> <span style="font-size: 0.8em; font-style: italic;">Prototyping</span></p>
+        <p>This project was originally designed to store files on YouTube, but platform compression issues caused me to finish the project early. It uses FFmpeg to encode files into video frames and back.</p>
+        <h2>SOURCE CODE</h2>
+        <p>Source code is available at <a href="https://github.com/utkrstht/encoder">Github</a></p>
+
+		<hr style="clear: right;">
+	</div>
+</body>

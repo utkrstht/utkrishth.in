@@ -1,0 +1,246 @@
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="UTKRISHTH">
+    <meta name="theme-color" content="#f9cf9f">
+    <link rel="icon" href="assets/logo.png">
+
+    <title>UTKRISHTHPAGE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,900;1,500;1,900&display=swap" rel="stylesheet">
+
+	<style>
+
+	:root {
+		--rounder: 0, 0, 0;
+		--maroon: 239, 0, 0;
+		--gold: 194, 139, 36;
+        --dark: 13, 13, 13;
+        --beige: 249, 207, 159;
+        --white: 255, 255, 255;
+	}
+	body {
+		color: rgb(var(--rounder));
+		background-color: rgb(var(--beige));
+        background-image: linear-gradient(rgba(249, 207, 159, 0.8), rgba(249, 207, 159, 0.8)),url(assets/topotrans.png);
+        background-size: 100%;
+        scrollbar-color: rgb(var(--gold)) rgb(var(--dark));
+	}
+	a {
+		color: rgb(var(--rounder));
+	}
+	a:hover {
+		color: rgb(var(--white));
+	}
+
+    .title {
+        font-size: 15rem;
+        font-family: 'Barlow', sans-serif;
+        font-weight:800;
+        position: relative;
+        top: -5rem;
+        left: -1rem;
+		text-decoration: underline;
+    }
+    .content {
+        display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-rows: repeat(5, 1fr);
+		grid-template-areas: 
+            "quotes pic websites"
+            "quotes pic github"
+            "quotes pic other"
+            "quotes pic cook"
+            "quotes pic abt";
+		row-gap: 2rem;
+        column-gap: 7rem;
+        position: relative;
+        top: -3rem;
+        height: 40rem;
+    }
+    .quotes {
+        /* border: 1px solid green; */
+        grid-area: quotes;
+    }
+    .websites {
+        /* border: 1px solid blue; */
+        grid-area: websites;
+    }
+    .github {
+        /* border: 1px solid yellow; */
+        grid-area: github;
+    }
+    .other {
+        /* border: 1px solid orange; */
+        grid-area: other;
+    }
+    .pic {
+        /* border: 1px solid red; */
+        grid-area: pic;
+    }
+    .cook {
+        /* border: 1px solid purple; */
+        grid-area: cook;
+    }
+    .abt {
+        /* border: 1px solid purple; */
+        grid-area: abt;
+    }
+
+    .quotes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: baseline;
+        align-content: center;
+    }
+    .praise {
+        /* background: blue; */
+        font-size: 2rem;
+        font-family: 'Barlow', sans-serif;
+        font-weight:500;
+        font-style: italic;
+        margin: 0.5rem;
+    }
+    .rndrhs {
+        padding: 0rem 6rem;
+        animation: spinny 2s;
+    }
+
+    .showbox {
+        display: block;
+        text-decoration: none;
+        background-color: rgb(var(--gold));
+        color: rgb(255, 221, 221);
+        transition: all 150ms ease-in-out;
+        -webkit-text-stroke: 2px rgb(var(--dark));
+        background-blend-mode: multiply;
+    }
+
+    .showbox .head {
+        font-size: 3rem;
+        font-family: 'Barlow', sans-serif;
+        font-weight:900;
+        position:relative;
+        top: 0;
+        left:0.5rem;
+    }
+
+    .showbox:hover {
+        color: rgb(var(--beige));
+        background-color: transparent;
+    }
+
+    .pic {
+        background-image: url('assets/logo.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        animation: spinny 3s;
+        min-height: 31rem;
+        background-size: 70%;
+    }
+    .websites {
+        background-image: url('assets/amoniram.png');
+        background-position: center;
+        background-size: 200%;
+    }
+
+    .github {
+        background-image: url('assets/valern.jpg');
+        background-position: top center 30%;
+        background-size: 110%;
+    }
+
+    .other {
+        background-image: url('assets/school3.png');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .cook {
+        background-image: url('assets/cooking.jpg');
+        background-position: center top 15%;
+    }
+
+    .abt {
+        background-image: url('assets/floater.png');
+        background-position: center bottom 20%;
+    }
+
+    @keyframes spinny {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+
+    @media (max-width: 1290px) {
+		.content {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			grid-template-areas: 'pic'
+								 'quotes'
+                                 'websites'
+                                 'github'
+                                 'other'
+                                 'abt';
+		}
+	}
+	</style>
+  </head>
+
+  <body>
+    <div class="title">
+        <a href="index.html">UTKRISHTH</a>
+    </div>
+    <div class="content"> 
+        <div class="quotes">
+            <span class="praise">"web dev"</span>
+            <span class="praise">"pi lover"</span>
+            <span class="praise">"git gud"</span>
+            <span class="praise">"love programming"</span>
+            <span class="praise">"cat"</span>
+            <span class="praise">"fastidious"</span>
+            <span class="praise">"so many big words that i dont know the meaning of"</span> 
+            <span class="praise">"food"</span>
+            <span class="praise">"mellifluous"</span>
+            <span class="praise">"effervescent"</span>            
+        </div>
+        <div class="pic" data-tilt>
+            <div style="text-align: center;">
+            </div>
+        </div>
+
+        <a class="showbox websites" href="websites.html">
+            <span class="head">PROJECTS</span>
+        </a>
+
+        <a class="showbox github" href="https://github.com/utkrstht?tab=repositories">
+          <span class="head">GITHUB</span>
+        </a>
+
+        <a class="showbox other" href="other.html">
+            <span class="head">OTHER PROJECTS</span>
+        </a>
+
+        <a class="showbox cook" href="cooking.html">
+            <span class="head">COOKING</span>
+        </a>
+
+        <a class="showbox abt" href="about.html">
+            <span class="head">ABOUT ME</span>
+        </a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script>
+        const testim = document.querySelectorAll('.praise');
+        const count = testim.length;
+
+        for (let i = 0; i < count; i++) {
+            let x = Math.random() * (3 - 0.85) + 1.85;
+            testim[i].style.fontSize = x.toFixed(2) + "rem";
+        }
+
+    </script>
+</body>

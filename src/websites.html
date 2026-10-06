@@ -1,0 +1,308 @@
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="UTKRISHTH">
+    <meta name="theme-color" content="#f9cf9f">
+    <link rel="icon" href="assets/logo.png">
+
+    <title>UTKRISHTHPAGE</title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha512-Y2IiVZeaBwXG1wSV7f13plqlmFOx8MdjuHyYFVoYzhyRr3nH/NMDjTBSswijzADdNzMyWNetbLMfOpIPl6Cv9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,900;1,500;1,900&family=Dosis:wght@300;400;500;800&display=swap" rel="stylesheet">
+  
+	<style>
+	:root {
+		--rounder: 0, 0, 0;
+		--maroon: 239, 0, 0;
+		--gold: 194, 139, 36;
+        --dark: 13, 13, 13;
+        --beige: 249, 207, 159;
+        --white: 255, 255, 255;
+	}
+	body {
+		color: rgb(var(--rounder));
+		background-color: rgb(var(--beige));
+        background-image: linear-gradient(rgba(249, 207, 159, 0.8), rgba(249, 207, 159, 0.8)),url(assets/topotrans.png);
+        background-size: 100%;
+        scrollbar-color: rgb(var(--gold)) rgb(var(--dark));
+	}
+	.textbox h1, h2, h3, h4 {
+		font-family: 'Barlow', sans-serif;
+        font-weight:500;
+	}
+	a {
+		color: rgb(var(--rounder));
+	}
+	a:hover {
+		color: rgb(var(--white));
+	}
+
+    .title {
+        font-size: 15rem;
+        font-family: 'Barlow', sans-serif;
+        font-weight:800;
+        position: relative;
+        top: -7rem;
+        left: -1rem;
+		text-decoration: underline;
+    }
+
+	.textbox {
+		box-shadow: 0px 0px 20px rgba(0,0,0,.60);
+		display: block;
+		max-width: 70%;
+		padding: 1rem;
+		background: #09060691;
+		margin: auto;
+		margin-top: -7rem;
+		border-radius: 3px;
+		font-size: 125%;
+	}
+
+	.card-deck {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.card-deck .card:last-child {
+		grid-column: 1 / -1;
+		width: 70%;
+		margin: 0 auto;
+	}
+	.card {
+		transition: transform 0.2s ease-in-out;
+		overflow: hidden;
+	}
+	.card:hover {
+		transform: translateY(-5px);
+	}
+	.card-img-overlay {
+		background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		padding: 1.5rem;
+	}
+	.contrast {
+		background: #202020e0;
+		padding: 12px 15px;
+		border-radius: 8px;
+		margin: 5px;
+		display: inline-block;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	}
+	.card-text {
+		margin-top: 1rem;
+	}
+	.redside {
+		border-left: 5px solid rgb(var(--white));
+	}
+	.goldside {
+		border-left: 5px solid rgb(var(--black));
+	}
+	hr {
+		border-color: #000000;
+	}
+
+    @keyframes spinny {
+        0% {transform: rotate(0deg);}
+        100% {transform: rotate(360deg);}
+    }
+
+	.modal-content {
+		background: #353535;
+	}
+
+	.contrast {
+		background: #202020e0;
+		padding: 12px 15px;
+		border-radius: 8px;
+		margin: 5px;
+		display: inline-block;
+		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	}
+	.card-deck {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto auto;
+		gap: 1.5rem;
+		margin-bottom: 2rem;
+	}
+	.card-deck .card:last-child {
+		grid-column: 2;
+		width: 100%;
+		margin: 0 auto;
+	}
+	.writingbox {
+		display: grid;
+		grid-template-columns: repeat(1fr, 2);
+		grid-template-rows: auto;
+		grid-template-areas: 'scp blurb';
+		grid-gap: 0.5rem;
+		}
+	.scp {
+		grid-area: scp;
+		max-width: 350;
+		justify-self: center;
+	}
+	.blurb {
+		grid-area: blurb;
+	}
+	.redside {
+		border-left: 5px solid rgb(var(--white));
+	}
+	.goldside {
+		border-left: 5px solid rgb(var(--black));
+	}
+	hr {
+	border-top: 1px solid rgba(0, 0, 0, 0.33);
+	}
+	
+.masonry { 
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	align-content: space-around;
+	flex-wrap: wrap;
+
+}
+.item {
+	display: block;
+	max-width: 20%;
+	margin: 1rem;
+}
+.item img{max-width:100%;}
+	
+	@keyframes rock {
+	  from {transform: rotate(15deg)}
+	  to {transform: rotate(-15deg)}
+	}
+	
+	@keyframes emph {
+	  from {transform: rotate(0deg); background: #403636db;}
+	  to {transform: rotate(7deg); background: #403636;}
+	}
+	</style>
+  </head>
+
+</style>
+</head>
+
+<body>
+  <div class="title">
+	  <a href="index.html">UTKRISHTH</a>
+  </div>
+
+    <main role="main" class="textbox">
+
+      <div class="starter-template">
+        <h1 id="page-title">PROJECTS</h1>
+		<hr>
+      </div>
+
+		<section>
+		<p>This is a curated selection of what I have made till now!</p>
+<hr>
+
+<h3>APPLICATIONS</h3>
+<p>These are mobile applications I have/am developing for clients.</p>
+<br>
+<div class="card-deck">
+	<div class="card bg-dark text-white redside">
+  <img loading="lazy" src="assets/myroadtrip.png" class="card-img" style="height: 22rem; object-fit: cover;" alt="...">
+		<div class="card-img-overlay">
+			<h3 class="card-title"><span class="contrast">MyRoadTrip<span class="badge badge-danger" style="margin-left: 6px">APP</span></span></h3>
+			<p class="card-text" style="line-height: 2;"><span class="contrast">A taxi service company based in Calgary, Canada, ran by Ricky S.</span></p>
+			<a href="https://play.google.com/store/apps/details?id=dev.kiki.userapp.dcehkdpp" class="btn btn-danger" target="_blank">Download App</a>
+		</div>
+	</div>
+	<div class="card bg-dark text-white goldside" style="margin-right: 1.5rem;">
+  <img loading="lazy" src="assets/Placeholder.png" class="card-img" style="height: 22rem; object-fit: cover;" alt="...">
+		<div class="card-img-overlay">
+			<h3 class="card-title"><span class="contrast">Gunn Ayurveda<span class="badge badge-warning" style="margin-left: 6px">UNDER-WORK</span></span></h3>
+			<p class="card-text" style="line-height: 2;"><span class="contrast">Gunn Ayurveda (UNDER-WORK)</span></p>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<h3>PROJECTS</h3>
+<p>These are personal and open-source projects built with Python and other technologies.</p>
+<br>
+<div class="card-deck">
+	<div class="card bg-dark text-white redside">
+  <img loading="lazy" src="assets/Placeholder.png" class="card-img" style="height: 22rem; object-fit: cover;" alt="...">
+		<div class="card-img-overlay">
+			<h3 class="card-title"><span class="contrast">pygmail<span class="badge badge-success" style="margin-left: 6px">COMPLETE</span></span></h3>
+			<p class="card-text" style="line-height: 2;"><span class="contrast">Python Gmail client to send emails fast and easy</span></p>
+			<a href="https://github.com/utkrstht/pygmail" class="btn btn-success" target="_blank">View Project</a>
+		</div>
+	</div>
+	<div class="card bg-dark text-white goldside" style="margin-right: 1.5rem;">
+  <img loading="lazy" src="assets/tails.png" class="card-img" style="height: 22rem; object-fit: cover;" alt="...">
+		<div class="card-img-overlay">
+			<h3 class="card-title"><span class="contrast">Tails<span class="badge badge-secondary" style="margin-left: 6px">UNAVAILABLE</span></span></h3>
+			<p class="card-text" style="line-height: 2;"><span class="contrast">tails is a cute little assistant which you can play around with and get help from! built in python with love :3</span></p>
+			<a href="assets/tails.png" class="btn btn-secondary" target="_blank">View Preview</a>
+		</div>
+	</div>
+</div>
+
+<hr>
+
+<h3>WEBSITES</h3>
+<p>These are websites I have made for clients, ranging from React to HTML to Wordpress.</p>
+<br>
+<div class="card-deck">
+  <div class="card bg-dark text-white redside">
+  <img loading="lazy" src="assets/edbrand.png" class="card-img" style="height: 24rem; object-fit: contain;" alt="...">
+		<div class="card-img-overlay">
+			<h3 class="card-title"><span class="contrast">Edbrand<span class="badge badge-warning" style="margin-left: 6px">UPCOMING</span></span></h3>
+			<p class="card-text" style="line-height: 2;"><span class="contrast">An education counselling company "Edbrand", ran by Arjun Seth, CEO, Edbrand and Collegefair.live and Strategic Advisor, CBSE India.</span></p>
+			<a href="assets/edbrand.png" class="btn btn-warning" target="_blank">View Preview Image</a>
+		</div>
+	</div>
+	<div class="card bg-dark text-white goldside">
+  <img loading="lazy" src="assets/balajidhaam.png" class="card-img" style="height: 22rem; object-fit: cover;" alt="...">
+		<div class="card-img-overlay">
+			<h3 class="card-title"><span class="contrast">Balaji Dhaam<span class="badge badge-danger" style="margin-left: 6px">RUNNING</span></span></h3>
+			<p class="card-text" style="line-height: 2;"><span class="contrast">A temple based in India "Balaji Dhaam", ran by Dharmendra Arora, "Vaastu" Consultancy.</span></p>
+			<a href="https://balajidhaam.in" class="btn btn-danger" target="_blank">Visit BalajiDhaam.in</a>
+		</div>
+	</div>
+	<div class="card bg-dark text-white redside">
+  <img loading="lazy" src="assets/myroadtrip.png" class="card-img" style="height: 22rem; object-fit: cover;" alt="...">
+		<div class="card-img-overlay">
+			<h3 class="card-title"><span class="contrast">MyRoadTrip<span class="badge badge-danger" style="margin-left: 6px">RUNNING</span></span></h3>
+			<p class="card-text" style="line-height: 2;"><span class="contrast">A taxi service company based in Calgary, Canada, ran by Ricky S.</span></p>
+			<a href="https://myroadtrip.ca" class="btn btn-danger" target="_blank">Visit MyRoadTrip.ca</a>
+		</div>
+	</div>
+</div>
+<hr>
+<h1 id="page-title">WANT TO HIRE ME TO BUILD SOMETHING FOR YOU?</h1>
+<h4> I build software, I can build it for you as well!</h4> <br>
+	Anything from a portfolio site to a online shop to a mobile application, I can build it for you, <br>
+	You can email me at <a href="mailto:utkrishth@utkrishth.in" style="text-decoration: underline;">utkrishth@utkrishth.in</a>
+		</section>
+    </main><!-- /.container -->
+
+	<script>
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
+	</script>
+</body>
