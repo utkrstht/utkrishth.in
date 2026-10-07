@@ -67,137 +67,93 @@
 		border-radius: 3px;
 		font-size: 125%;
 	}
-
-	.card-deck {
+		
+	.project-grid {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto auto;
+		grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), min(100%, 24rem)));
+		justify-content: start;
 		gap: 1.5rem;
-		margin-bottom: 2rem;
+		margin: 1.5rem 0 2rem;
 	}
-	.card-deck .card:last-child {
-		grid-column: 1 / -1;
-		width: 70%;
-		margin: 0 auto;
-	}
-	.card {
-		transition: transform 0.2s ease-in-out;
-		overflow: hidden;
-	}
-	.card:hover {
-		transform: translateY(-5px);
-	}
-	.card-img-overlay {
-		background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+	
+	.pbox {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
-		padding: 1.5rem;
+		min-height: 14rem;
+		padding: 1.25rem 1.5rem;
+		text-decoration: none;
+		color: rgb(var(--beige));
+		background-color: rgb(var(--dark));
+		background-size: cover;
+		background-position: center;
+		transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
+		overflow: hidden;
 	}
-	.contrast {
-		background: #202020e0;
-		padding: 12px 15px;
-		border-radius: 8px;
-		margin: 5px;
-		display: inline-block;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	.pbox::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to bottom, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.8));
+		pointer-events: none;
 	}
-	.card-text {
-		margin-top: 1rem;
+	.pbox::after {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: rgba(13, 13, 13, 0.45);
+		transition: opacity 150ms ease-in-out;
+		pointer-events: none;
 	}
-	.redside {
-		border-left: 5px solid rgb(var(--white));
+	.pbox:hover::after {
+		opacity: 0;
 	}
-	.goldside {
-		border-left: 5px solid rgb(var(--black));
+	.pbox > span {
+		position: relative;
+		z-index: 1;
 	}
-	hr {
-		border-color: #000000;
+	.pbox .head {
+		font-size: clamp(1.8rem, 4vw, 2.6rem);
+		font-family: 'Barlow', sans-serif;
+		font-weight: 900;
+		-webkit-text-stroke: 1px rgb(var(--dark));
 	}
-
-    @keyframes spinny {
-        0% {transform: rotate(0deg);}
-        100% {transform: rotate(360deg);}
-    }
-
-	.modal-content {
-		background: #353535;
+	.pbox .note {
+		font-size: 1rem;
+		color: rgb(var(--beige));
 	}
-
-	.contrast {
-		background: #202020e0;
-		padding: 12px 15px;
-		border-radius: 8px;
-		margin: 5px;
-		display: inline-block;
-		box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+	.pbox .cta {
+		font-size: 0.9rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		color: rgb(var(--gold));
 	}
-	.card-deck {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto auto;
-		gap: 1.5rem;
-		margin-bottom: 2rem;
+	.pbox .meta {
+		display: flex;
+		flex-direction: column;
+		gap: 0.4rem;
 	}
-	.card-deck .card:last-child {
-		grid-column: 2;
-		width: 100%;
-		margin: 0 auto;
+	.pbox:hover {
+		color: rgb(var(--beige));
+		background-color: transparent;
 	}
-	.writingbox {
-		display: grid;
-		grid-template-columns: repeat(1fr, 2);
-		grid-template-rows: auto;
-		grid-template-areas: 'scp blurb';
-		grid-gap: 0.5rem;
-		}
-	.scp {
-		grid-area: scp;
-		max-width: 350;
-		justify-self: center;
+	.pbox:hover .head {
+		color: rgb(var(--beige));
 	}
-	.blurb {
-		grid-area: blurb;
+	.pbox-noimg::before {
+		display: none;
 	}
-	.redside {
-		border-left: 5px solid rgb(var(--white));
+	.pbox-noimg:hover {
+		background-color: rgb(var(--gold));
+		color: rgb(var(--dark));
 	}
-	.goldside {
-		border-left: 5px solid rgb(var(--black));
-	}
-	hr {
-	border-top: 1px solid rgba(0, 0, 0, 0.33);
-	}
-	
-.masonry { 
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	align-content: space-around;
-	flex-wrap: wrap;
-
-}
-.item {
-	display: block;
-	max-width: 20%;
-	margin: 1rem;
-}
-.item img{max-width:100%;}
-	
-	@keyframes rock {
-	  from {transform: rotate(15deg)}
-	  to {transform: rotate(-15deg)}
-	}
-	
-	@keyframes emph {
-	  from {transform: rotate(0deg); background: #403636db;}
-	  to {transform: rotate(7deg); background: #403636;}
+	.pbox-noimg:hover .note,
+	.pbox-noimg:hover .cta {
+		color: rgb(var(--dark));
 	}
 	</style>
   </head>
-
-</style>
-</head>
 
 <body>
   <div class="title">
@@ -207,17 +163,57 @@
     <main role="main" class="textbox">
 
       <div class="starter-template">
-        <h1 id="page-title">PROJECTS</h1>
+        <h1 id="page-title">WORK</h1>
 		<hr>
       </div>
 
-		<section>
-		<p>This is a curated selection of what I have made till now!</p>
-<hr>
-
 <h3>PROJECTS</h3>
-<p>These are personal and open-source projects built with Python and other technologies.</p>
+<p>These are open-source projects built with Python and other technologies.</p>
 
+<div class="project-grid">
+	<a class="pbox" href="https://github.com/utkrstht/clank" target="_blank" rel="noopener" style="background-image: url('https://cdn.hackclub.com/01a116a9-ee00-745a-8665-f013ecbe10e2/Screenshot%202026-09-18%20191957.png')">
+		<span class="head">CLANK</span>
+		<span class="meta">
+			<span class="note">clank is a review tool for hackclub stardance for flagging projects for rejection</span>
+			<span class="cta">VIEW PROJECT! >>></span>
+		</span>
+	</a>
+	<a class="pbox" href="https://github.com/utkrstht/snek" target="_blank" rel="noopener" style="background-image: url('https://user-cdn.hackclub-assets.com/019e841f-d2c8-725f-ab0d-aca91d5f288e/image.png')">
+		<span class="head">SNEK</span>
+		<span class="meta">
+			<span class="note">snek is a snek game confined completely to a bootloader!</span>
+			<span class="cta">VIEW PROJECT! >>></span>
+		</span>
+	</a>
+		<a class="pbox" href="https://github.com/utkrstht/nigthfall" target="_blank" rel="noopener" style="background-image: url('https://cdn.hackclub.com/01a11689-89eb-77a4-aef8-1a8e77d8f076/Screenshot%202026-10-07%20185255.png')">
+		<span class="head">NIGHTFALL</span>
+		<span class="meta">
+			<span class="note">nightfall is an IP whois service!</span>
+			<span class="cta">VIEW PROJECT! >>></span>
+		</span>
+	</a>
+		<a class="pbox" href="https://github.com/utkrstht/horizons-explore" target="_blank" rel="noopener" style="background-image: url('https://user-cdn.hackclub-assets.com/019f460e-0256-74c9-a487-e3580b110feb/Screenshot%202026-07-07%20220944.png')">
+		<span class="head">HORIZONS EXPLORE</span>
+		<span class="meta">
+			<span class="note">project explorer for hackclub horizons!</span>
+			<span class="cta">VIEW PROJECT! >>></span>
+		</span>
+	</a>
+		<a class="pbox" href="https://github.com/utkrstht/transfur" target="_blank" rel="noopener" style="background-image: url('https://cdn.hackclub.com/01a11697-fd1e-770e-9c33-7f13a287d211/transfur.png')">
+		<span class="head">TRANSFUR</span>
+		<span class="meta">
+			<span class="note">transfur is a cross-platform file transfer program compatible with many communication protocols (LAN, Serial, etc)</span>
+			<span class="cta">VIEW PROJECT! >>></span>
+		</span>
+	</a>
+	<a class="pbox" href="https://github.com/utkrstht/raymay" target="_blank" rel="noopener" style="background-image: url('https://cdn.hackclub.com/01a116bb-87dd-7584-ae3c-ced6826787e9/Screenshot%202026-10-07%20193451.png')">
+		<span class="head">RAYMAY</span>
+		<span class="meta">
+			<span class="note">raymay is a 3d raymarching walking simulator, it runs as data URI (under 3kb!) in your browser!</span>
+			<span class="cta">VIEW PROJECT! >>></span>
+		</span>
+	</a>
+</div>
 
 <hr>
 
@@ -225,7 +221,6 @@
 <h4> I build software, I can build it for you as well!</h4> <br>
 	Anything from a portfolio site to a online shop to a mobile application, I can build it for you, <br>
 	You can email me at <a href="mailto:utkrishth@utkrishth.in" style="text-decoration: underline;">utkrishth@utkrishth.in</a>
-		</section>
     </main><!-- /.container -->
 
 	<script>

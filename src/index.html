@@ -53,8 +53,6 @@
 		grid-template-areas: 
             "quotes pic websites"
             "quotes pic github"
-            "quotes pic other"
-            "quotes pic cook"
             "quotes pic abt";
 		row-gap: 2rem;
         column-gap: 7rem;
@@ -74,17 +72,9 @@
         /* border: 1px solid yellow; */
         grid-area: github;
     }
-    .other {
-        /* border: 1px solid orange; */
-        grid-area: other;
-    }
     .pic {
         /* border: 1px solid red; */
         grid-area: pic;
-    }
-    .cook {
-        /* border: 1px solid purple; */
-        grid-area: cook;
     }
     .abt {
         /* border: 1px solid purple; */
@@ -155,17 +145,6 @@
         background-size: 110%;
     }
 
-    .other {
-        background-image: url('assets/school3.png');
-        background-size: cover;
-        background-position: center;
-    }
-
-    .cook {
-        background-image: url('assets/cooking.jpg');
-        background-position: center top 15%;
-    }
-
     .abt {
         background-image: url('assets/floater.png');
         background-position: center bottom 20%;
@@ -184,7 +163,6 @@
 								 'quotes'
                                  'websites'
                                  'github'
-                                 'other'
                                  'abt';
 		}
 	}
