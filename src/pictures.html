@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="UTKRISHTH">
+    <meta name="theme-color" content="#f9cf9f">
+    <link rel="icon" href="assets/logo.png">
+
+    <title>UTKRISHTHPAGE</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,900;1,500;1,900&family=Dosis:wght@300;400;500;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --rounder: 0, 0, 0;
+            --maroon: 239, 0, 0;
+            --gold: 194, 139, 36;
+            --dark: 13, 13, 13;
+            --beige: 249, 207, 159;
+            --white: 255, 255, 255;
+        }
+
+        body {
+            font-family: 'Dosis', sans-serif;
+            color: rgb(var(--rounder));
+            background-color: rgb(var(--beige));
+            background-image: linear-gradient(rgba(249, 207, 159, 0.8), rgba(249, 207, 159, 0.8)), url('assets/topotrans.png');
+            background-size: 100%;
+            scrollbar-color: rgb(var(--gold)) rgb(var(--dark));
+        }
+
+        .textbox h1, h2, h3, h4 {
+            font-family: 'Barlow', sans-serif;
+            font-weight: 500;
+        }
+
+        a {
+            color: rgb(var(--rounder));
+        }
+        a:hover {
+            color: rgb(var(--white));
+        }
+
+        .title {
+            font-size: 15rem;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 800;
+            position: relative;
+            top: -5rem;
+            left: -1rem;
+            text-decoration: underline;
+        }
+
+        .textbox {
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.60);
+            display: block;
+            max-width: 70%;
+            padding: 1rem;
+            background: #09060691;
+            margin: auto;
+            margin-top: -5rem;
+            border-radius: 3px;
+            font-size: 125%;
+        }
+        hr {
+            border-color: #000000;
+        }
+
+        .gallery {
+            column-count: 3;
+            column-gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+
+        .gallery figure {
+            break-inside: avoid;
+            margin: 0 0 1.25rem;
+            position: relative;
+        }
+
+        .gallery img {
+            width: 100%;
+            display: block;
+            background: rgba(13, 13, 13, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.015);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery figcaption {
+            font-family: 'Barlow', sans-serif;
+            font-size: 0.95rem;
+            color: rgb(var(--beige));
+            margin-top: 0.4rem;
+        }
+
+        @media (max-width: 1000px) {
+            .gallery {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .gallery {
+                column-count: 1;
+            }
+        }
+     </style>
+</head>
+
+<body>
+    <div class="title">
+        <a href="index.html">UTKRISHTH</a>
+    </div>
+
+    <main role="main" class="textbox">
+        <h1 id="page-title">GALLERY</h1>
+        <p>Some photos I've taken that I like!</p>
+        <hr>
+
+        <div class="gallery" id="gallery">
+            <figure><img src="assets/pigon3.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/pigon1.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/tree1.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/flower1.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/moon4.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/sky1.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/squirrel1.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/squirrel2.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/sky2.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/sky3.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/plant1.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/plant2.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/plant3.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/pigon2.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/pigon4.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/moon1.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/moon2.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/moon3.jpg" loading="lazy" decoding="async"></figure>
+            <figure><img src="assets/moon5.jpg" loading="lazy" decoding="async"></figure>
+        </div>
+    </main>
+</body>

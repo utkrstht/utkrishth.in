@@ -11,7 +11,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,900;1,500;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,500;0,900;1,500;1,900&family=Dosis:wght@300;400;500;800&display=swap" rel="stylesheet">
 
 	<style>
 
@@ -49,10 +49,11 @@
     .content {
         display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-template-rows: repeat(5, 1fr);
-		grid-template-areas: 
+		grid-template-rows: repeat(4, 1fr);
+		grid-template-areas:
             "quotes pic websites"
             "quotes pic github"
+            "quotes pic pics"
             "quotes pic abt";
 		row-gap: 2rem;
         column-gap: 7rem;
@@ -75,6 +76,9 @@
     .pic {
         /* border: 1px solid red; */
         grid-area: pic;
+    }
+    .pics {
+        grid-area: pics;
     }
     .abt {
         /* border: 1px solid purple; */
@@ -133,6 +137,12 @@
         min-height: 31rem;
         background-size: 70%;
     }
+
+    .pics {
+        background-image: url('assets/school3.png');
+        background-position: center;
+        background-size: cover;
+    }
     .websites {
         background-image: url('assets/amoniram.png');
         background-position: center;
@@ -160,6 +170,7 @@
 			grid-template-columns: 1fr;
 			grid-template-rows: auto;
 			grid-template-areas: 'pic'
+                                 'pics'
 								 'quotes'
                                  'websites'
                                  'github'
@@ -173,7 +184,7 @@
     <div class="title">
         <a href="index.html">UTKRISHTH</a>
     </div>
-    <div class="content"> 
+    <div class="content">
         <div class="quotes">
             <span class="thing">ceiling</span>
             <span class="thing">blahaj</span>
@@ -181,10 +192,10 @@
             <span class="thing">sell me this pen</span>
             <span class="thing">kaboom</span>
             <span class="thing">kablow</span>
-            <span class="thing">force pushed</span> 
+            <span class="thing">force pushed</span>
             <span class="thing">senator i'm </span>
             <span class="thing">sell me this dependency</span>
-            <span class="thing">backrooms baccarat</span>            
+            <span class="thing">backrooms baccarat</span>
         </div>
         <div class="pic" data-tilt>
             <div style="text-align: center;">
@@ -197,6 +208,10 @@
 
         <a class="showbox github" href="https://github.com/utkrstht">
           <span class="head">GITHUB</span>
+        </a>
+
+        <a class="showbox pics" href="pictures.html">
+            <span class="head">GALLERY</span>
         </a>
 
         <a class="showbox abt" href="about.html">
